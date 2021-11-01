@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_printnbr_fd(int n, int fd)
+static	void	ft_printnbr_fd(int n, int fd)
 {
 	if (n > 0 && n < 10)
 	{
