@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:15:53 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/02 11:20:11 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:12:49 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	int	ft_isupper(int c)
 	return (0);
 }
 
-int			ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (ft_isupper(c))
 	{
