@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 15:21:01 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/01 16:14:21 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/02 10:22:34 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,5 @@
 
 void	ft_putendl(char const *s)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
-	ft_putchar('\n');
+	ft_putendl_fd(s, 1);
 }
