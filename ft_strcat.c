@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fglsn <fglsn@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 13:20:42 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/02 14:59:03 by ishakuro         ###   ########.fr       */
+/*   Created: 2021/11/03 13:04:23 by ishakuro          #+#    #+#             */
+/*   Updated: 2021/11/03 15:39:33 by fglsn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t		i;
-	char		*d;
-	const char	*s;
-
-	i = 0;
-	d = (char *)dst;
-	s = (const char *)src;
-	while (i < n)
-	{
-		*d++ = *s++;
-		i++;
-	}
-	return (dst);
+	ft_strcpy((s1 + ft_strlen(s1)), s2);
+	return (s1);
 }
