@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:58:44 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/04 20:04:06 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/04 20:12:21 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ static int	check_sign(const char **c)
 	return (1);
 }
 
-int	check_overflow(long result, int sign)
+static int	handle_overflow(int sign)
 {
 	long	long_max;
 	long	long_min;
 
 	long_max = (2 >> 31) - 1;
 	long_min = -(2 >> 31);
-	if (result < 0)
+	if (sign > 0)
 	{
-		if (sign > 0)
-			return ((int)long_max);
-		else
-			return ((int)long_min);
+		return ((int)long_max);
 	}
-	return (result);
+	else
+	{
+		return ((int)long_min);
+	}
 }
 
 int	ft_atoi(const char *str)
@@ -75,7 +75,7 @@ int	ft_atoi(const char *str)
 		result = result * 10 + (str[i] - '0');
 		if (result < 0)
 		{
-			return (check_overflow(result, sign));
+			return (handle_overflow(sign));
 		}
 		i++;
 	}
