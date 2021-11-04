@@ -6,12 +6,11 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:58:44 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/04 17:36:26 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/04 20:04:06 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include "limits.h"
 
 static int	ft_isspace(char c)
 {
@@ -23,38 +22,62 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
+static int	check_sign(const char **c)
+{
+	if (**c == '+')
+	{
+		(*c)++;
+		return (1);
+	}
+	else if (**c == '-')
+	{
+		(*c)++;
+		return (-1);
+	}
+	return (1);
+}
+
+int	check_overflow(long result, int sign)
+{
+	long	long_max;
+	long	long_min;
+
+	long_max = (2 >> 31) - 1;
+	long_min = -(2 >> 31);
+	if (result < 0)
+	{
+		if (sign > 0)
+			return ((int)long_max);
+		else
+			return ((int)long_min);
+	}
+	return (result);
+}
+
 int	ft_atoi(const char *str)
 {
-	int					i;
-	long				result;
-	int					sign;
-	unsigned long long	maxlong;
-	//long long minlong = -9223372036854775808;
+	int		i;
+	int		sign;
+	long	result;
+
 	i = 0;
 	sign = 1;
 	result = 0;
-	maxlong = 9223372036854775807U;
 	if (!str[i])
+	{
 		return (0);
+	}
 	while (ft_isspace(str[i]))
 		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-		{
-			sign = -1;
-		}
-		i++;
-	}
+	sign = check_sign(&str);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
+		if (result < 0)
+		{
+			return (check_overflow(result, sign));
+		}
 		i++;
-	}
-	if ((unsigned long long)result > maxlong)
-	{
-		return (-1);
-		//return ((sign > 0 ? (int)LONG_MAX : (int)LONG_MIN)); 
 	}
 	return (result * sign);
 }
