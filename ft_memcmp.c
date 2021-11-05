@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 22:16:24 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/05 12:50:46 by ishakuro         ###   ########.fr       */
+/*   Created: 2021/11/05 17:39:37 by ishakuro          #+#    #+#             */
+/*   Updated: 2021/11/05 17:54:17 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char		ch;
-	unsigned char		*dest;
-	const unsigned char	*source;
-	size_t				i;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	source = (const unsigned char *)src;
-	dest = (unsigned char *)dst;
-	ch = (unsigned char)c;
 	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (n == 0)
+	{
+		return (0);
+	}
 	while (i < n)
 	{
-		if (*source == ch)
+		if (*str1++ != *str2++)
 		{
-			*dest++ = *source++;
-			return (dest);
+			return (*--str1 - *--str2);
 		}
-		*dest++ = *source++;
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
