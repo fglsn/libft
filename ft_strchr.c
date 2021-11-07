@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:33:51 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/03 18:26:19 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:13:26 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		s++;
 	}
-	if (*s == '\0' && ch == '\0')
+	if (ch == '\0')
 	{
 		return ((char *)s);
 	}
