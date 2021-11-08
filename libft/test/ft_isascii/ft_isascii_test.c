@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isascii_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 17:22:05 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/08 12:40:16 by ishakuro         ###   ########.fr       */
+/*   Created: 2021/11/02 10:31:58 by ishakuro          #+#    #+#             */
+/*   Updated: 2021/11/02 10:41:53 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_isascii(int c);
+
+int main(void)
 {
-	unsigned char	*str;
-	unsigned char	ch;
-	size_t			i;
-
-	i = 0;
-	str = (unsigned char *)s;
-	ch = (unsigned char)c;
-	while (n > i)
-	{
-		if (*str == ch)
-		{
-			return (str);
-		}
-		str++;
-		i++;
-	}
-	return (NULL);
+	printf("%d\n", ft_isascii('g'));
+	printf("%d\n", ft_isascii('5'));
+	printf("%d\n", ft_isascii(1079));
+	printf("%d\n", ft_isascii('/'));
+	return (0);
 }

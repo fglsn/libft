@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:58:44 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/04 20:12:21 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/08 16:39:11 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,5 @@ int	ft_atoi(const char *str)
 		}
 		i++;
 	}
-	return (result * sign);
+	return ((int)result * sign);
 }

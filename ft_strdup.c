@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:16:45 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/02 15:00:35 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/08 16:07:48 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		len;
+	size_t	len;
 	char	*copy;
 
 	len = ft_strlen(s1) + 1;
