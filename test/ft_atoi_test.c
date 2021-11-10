@@ -14,6 +14,8 @@ int main(int argc, char **argv)
 	printf("%d\n", ft_atoi(s1));
 	printf("%d\n", atoi(n));
 	printf("%d\n", ft_atoi(n));
+
+
 	return (0);
 }
 
@@ -28,3 +30,5 @@ int main(int argc, char **argv)
 
 //11515845246265065471
 //9223372036854775807
+
+//21474836496468787683
