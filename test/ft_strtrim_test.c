@@ -1,0 +1,12 @@
+#include "libft.h"
+#include <stdio.h>
+
+int main(void)
+{
+	char const str[3][442] = {
+	{"HELLO     World\n\n\n\n\n\n    "} ,
+	{"       "} ,
+	{"HLOP"}
+	};
+	printf("\"%s\"\nEmpty str of len %zu: \"%s\"\n\"%s\"\n", ft_strtrim(str[0]), ft_strlen(ft_strtrim(str[1])), ft_strtrim(str[1]), ft_strtrim(str[2]));
+}
