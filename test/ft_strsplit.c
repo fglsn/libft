@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit2.c                                     :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:58:36 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/12 13:34:49 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/12 13:50:50 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,54 +38,33 @@ static size_t	ft_count_words(char const *s, char del)
 	return (word_count);
 }
 
-static size_t	ft_word_length(char const *s, size_t i, char del)
+static size_t	ft_word_length(char const *s, char del)
 {
 	size_t	len;
 
 	len = 0;
-	while (s[i] && s[i] != del)
+	while (*s++ && *s != del)
 	{
 		len++;
-		i++;
 	}
 	return (len);
 }
 
-int	ft_strcpy_split(char *dst, const char *src, size_t i, char del)
+char	*ft_split(char *s, char c)
 {
-	size_t	n;
+	char *result;
 
-	n = 0;
-	while (src[i] && src[i] != del)
+	result = NULL;
+	while (*s && *s == c)
+		s++;
+	if (!(ft_word_length(s, c)))
+		return (result);
+	result = malloc(sizeof(char *) * (ft_word_length(s, c) + 1));
+	if (!result)
+		return (NULL);
+	while (*s && *s != c)
 	{
-		dst[n++] = src[i++];
-	}
-	dst[n] = '\0';
-	return (i);
-}
-
-char	**ft_split(char *s, char c, char **result)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (!(ft_word_length(s, i, c)))
-			return (result);
-		result[j] = malloc(sizeof(char *) * (ft_word_length(s, i, c) + 1));
-		if (!result[j])
-			return (NULL);
-		if (s[i])
-		{
-			i = ft_strcpy_split(result[j], s, i, c);
-			j++;
-		}
-		result[j] = 0;
+		result = s++;
 	}
 	return (result);
 }
@@ -100,6 +79,11 @@ char	**ft_strsplit(char const *s, char c)
 	result = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!result)
 		return (NULL);
-	result = ft_split((char *)s, c, result);
+	while (*s++)
+	{
+		*result = ft_split((char *)s, c);
+		result++;
+	}
+	*result = 0;
 	return (result);
 }
