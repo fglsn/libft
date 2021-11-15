@@ -55,7 +55,13 @@ FUNCTIONS = ft_memset.c \
 					ft_putendl_fd.c \
 					ft_putnbr_fd.c
 
-OBJECTS = $(FUNCTIONS:.c=.o) 
+OBJECTS = $(FUNCTIONS:.c=.o)
+
+$(NAME):
+	$(CC) $(FLAGS) -c $(FUNCTIONS)
+	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
+
 all:
 	$(CC) $(FLAGS) -c $(FUNCTIONS)
 	ar rc $(NAME) $(OBJECTS)

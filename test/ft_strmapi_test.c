@@ -9,7 +9,7 @@ char	ft_putstring(unsigned int i, char c)
 		return(ft_tolower(c));
 }
 
-void strmap_test(void)
+void strmapi_test(void)
 {
 	char str[] = "hello world teST RRR\n";
 
@@ -17,7 +17,21 @@ void strmap_test(void)
 	printf("%s\n", new);
 }
 
+void strmapi_check_null(void)
+{
+	char	*ret = ft_strmapi(NULL, ft_putstring);
+	if (!ret)
+	{
+		printf("Test OK\n");
+		return ;
+	}
+	printf("Test KO");
+	return ;
+}
+
 int main(void)
 {
-	strmap_test();
+	strmapi_test();
+	strmapi_check_null();
+	return (0);
 }

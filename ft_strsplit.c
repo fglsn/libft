@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:58:36 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/14 22:40:39 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:50:08 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ char	**ft_strsplit(char const *s, char c)
 	char	**result;
 	size_t	words_count;
 
-	result = NULL;
-	words_count = ft_count_words(s, c);
 	if (!s)
 		return (NULL);
+	result = NULL;
+	words_count = ft_count_words(s, c);
 	result = (char **)malloc(sizeof(char *) * (words_count + 1));
 	if (!result)
 		return (NULL);

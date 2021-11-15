@@ -2,17 +2,35 @@
 #include <stdio.h> 
 
 
-int main(void)
+// int main(void)
+// {
+// 	int i = 0;
+// 	char	*s = "0 0 0 0 0 0 0 0 0";
+// 	char	**result = ft_strsplit(s, ' ');
+// 	while (result[i])
+// 	{
+// 		printf("%s\n", result[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+
+void strsplit_check_null(void)
 {
-	int i = 0;
-	char	*s = "0 0 0 0 0 0 0 0 0";
-	char	**result = ft_strsplit(s, ' ');
-	while (result[i])
+	char	**ret = ft_strsplit(NULL, ' ');
+	if (!ret)
 	{
-		printf("%s\n", result[i]);
-		i++;
+		printf("Test OK\n");
+		return ;
 	}
-	return (0);
+	printf("Test KO");
+	return ;
 }
 
-
+int main(void)
+{
+	
+	strsplit_check_null();
+	return (0);
+}

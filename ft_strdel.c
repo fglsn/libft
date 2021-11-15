@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:15:50 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/08 12:32:49 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:04:18 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_strdel(char **as)
 {
+	if (as == NULL || *as == NULL)
+		return ;
 	free(*as);
 	*as = NULL;
 }
