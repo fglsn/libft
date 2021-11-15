@@ -6,12 +6,11 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 11:12:43 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/11 14:46:25 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/14 23:02:07 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_isspace(char c)
 {

@@ -25,22 +25,45 @@ void strsub_test_empty(void)
 	printf("%s\n", ft_strsub(NULL, 0, 12));
 }
 
-// void later_start(void) //??
-// {
-// 	char	*str = "TEST";
-// 	size_t	size = 10;
+void strsub_test_start_bigger_than_strlens(void)
+{
+	char *str = "abcg";
 
-// 	char	*result = ft_strsub(str, 10, size);
-// 	printf("%s\n", result);
-// 	if (!strncmp(result, "", 1)) 
-// 	{	
-// 		printf("ok. Works with start bigger than length of original str\n");
-// 		free(result);
-// 		return ;
-// 	}
-// 	free(result);
-// 	printf("KO. doesnt work with start bigger than length of original str\n");
-// }
+	unsigned int start = 7;
+	size_t	len = 4;
+	
+	char *result = ft_strsub(str, start, len);
+	if (!strncmp(result, "", 1)) 
+	{	
+		printf("ok. Works with start bigger than original strlen\n");
+		free(result);
+		return ;
+	}
+	printf("%s\n", result);
+}
+
+
+void same_start(void) //??
+{
+	char	*str = "TEST";
+	size_t	size = 4;
+
+	char	*result = ft_strsub(str, 4, size);
+	if (!result)
+	{
+		printf("NULL RETURNED");
+		return;
+	}
+	printf("%s\n", result);
+	if (!strncmp(result, "", 1)) 
+	{	
+		printf("ok. Works with start that same length of original str\n");
+		free(result);
+		return ;
+	}
+	free(result);
+	printf("KO. doesnt work with start bigger than length of original str\n");
+}
 
 void fullstr(void) 
 {
@@ -60,6 +83,7 @@ int main(void)
 {
 	strsub_test();
 	strsub_test_empty();
-	fullstr();
+	strsub_test_start_bigger_than_strlens();
 	later_start();
+	fullstr();
 }

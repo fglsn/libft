@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:23:10 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/07 22:36:01 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/12 21:47:43 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		stack_len = len;
 	if (needle_len == 0)
 		return ((char *)haystack);
-	if (stack_len <= needle_len)
+	if (stack_len < needle_len)
 		return (NULL);
 	while (i <= stack_len - needle_len)
 	{

@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:20:42 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/02 14:59:03 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/14 23:14:27 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	d = (char *)dst;
 	s = (const char *)src;
+	if (!s && !d)
+		return (NULL);
 	while (i < n)
 	{
 		*d++ = *s++;

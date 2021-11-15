@@ -1,12 +1,12 @@
 #include "libft.h"
 #include <stdio.h> 
 
+
 int main(void)
 {
-	const char s[] = "hello world of pain";
-	char **result;
 	int i = 0;
-	result = ft_strsplit(s, ' ');
+	char	*s = "0 0 0 0 0 0 0 0 0";
+	char	**result = ft_strsplit(s, ' ');
 	while (result[i])
 	{
 		printf("%s\n", result[i]);
@@ -14,3 +14,5 @@ int main(void)
 	}
 	return (0);
 }
+
+

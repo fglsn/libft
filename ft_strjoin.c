@@ -6,12 +6,11 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:03:32 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/11 09:30:28 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/14 23:01:16 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	s_len(char const *s)
 {

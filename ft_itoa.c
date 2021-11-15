@@ -6,12 +6,11 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:26:11 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/12 16:33:18 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/12 21:06:20 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	ft_numlen(int n)
 {

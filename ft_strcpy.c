@@ -6,9 +6,11 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:09:00 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/02 15:33:21 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/14 23:01:01 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

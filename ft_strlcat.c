@@ -6,29 +6,49 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:11:17 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/03 18:26:45 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:10:27 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	src_len;
+	size_t	i;
+
+	i = 0;
+	src_len = ft_strlen(src);
+	if (size == 0)
+	{
+		return (src_len);
+	}
+	while (i < size - 1 && src[i])
+	{
+		dst[i] = (char)src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (src_len);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dst_len;
 	size_t	src_len;
-	size_t	offset;
-	size_t	i;
 
-	i = 0;
+	if (!dst && !src)
+		return (0);
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	offset = dst_len;
-	while (src[i] != '\0' && offset != dstsize - 1)
+	if (dstsize < dst_len)
 	{
-		dst[offset] = src[i];
-		offset++;
-		i++;
+		return (src_len + dstsize);
 	}
-	dst[offset] = '\0';
-	return (dst_len + src_len);
+	else
+	{
+		dst = dst + dst_len;
+		ft_strlcpy(dst, src, dstsize - dst_len);
+		return (dst_len + src_len);
+	}
 }

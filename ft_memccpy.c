@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 22:16:24 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/05 12:50:46 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/15 10:03:02 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 			return (dest);
 		}
 		*dest++ = *source++;
+		i++;
 	}
 	return (NULL);
 }

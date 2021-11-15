@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:58:44 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/08 16:39:11 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:52:32 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static int	check_sign(const char **c)
 {
 	if (**c == '+')
 	{
-		(*c)++;
+		*c = *c + 1;
 		return (1);
 	}
 	else if (**c == '-')
 	{
-		(*c)++;
+		*c = *c + 1;
 		return (-1);
 	}
 	return (1);
@@ -56,28 +56,26 @@ static int	handle_overflow(int sign)
 
 int	ft_atoi(const char *str)
 {
-	int		i;
 	int		sign;
 	long	result;
 
-	i = 0;
 	sign = 1;
 	result = 0;
-	if (!str[i])
-	{
+	if (!*str)
 		return (0);
-	}
-	while (ft_isspace(str[i]))
-		i++;
+	while (ft_isspace(*str))
+		str++;
 	sign = check_sign(&str);
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*str == '0')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
+		result = result * 10 + (*str - '0');
 		if (result < 0)
 		{
 			return (handle_overflow(sign));
 		}
-		i++;
+		str++;
 	}
 	return ((int)result * sign);
 }

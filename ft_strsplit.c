@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:58:36 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/14 18:16:49 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/14 22:40:39 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static size_t	ft_word_length(char const *s, char del)
 	return (len);
 }
 
-char	**ft_split(char *s, char c, char **result)
+static char	**ft_split(char *s, char c, char **result)
 {
 	size_t	j;
 	size_t	word_len;
@@ -60,7 +60,7 @@ char	**ft_split(char *s, char c, char **result)
 		word_len = ft_word_length(s, c);
 		if (!word_len)
 			return (result);
-		result[j] = malloc(sizeof(char *) * (word_len + 1));
+		result[j] = ft_strnew(word_len);
 		if (!result[j])
 			return (NULL);
 		ft_strncpy(result[j], s, word_len);
@@ -73,13 +73,16 @@ char	**ft_split(char *s, char c, char **result)
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**result;
+	size_t	words_count;
 
 	result = NULL;
+	words_count = ft_count_words(s, c);
 	if (!s)
 		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	result = (char **)malloc(sizeof(char *) * (words_count + 1));
 	if (!result)
 		return (NULL);
+	ft_bzero(result, sizeof(char *) * (words_count + 1));
 	result = ft_split((char *)s, c, result);
 	return (result);
 }
