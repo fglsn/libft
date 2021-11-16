@@ -1,1 +1,0 @@
--Wpedantic -Wunused -Wconversion -Wunreachable-code -Wtype-limits
