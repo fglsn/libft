@@ -6,9 +6,17 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:20:42 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/14 23:14:27 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/17 15:35:50 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION:
+** The memcpy() function copies n bytes from memory src to memory dst.
+** If src and dst overlap, behavior is undefined.  Applications in which
+** src and dst might overlap should use memmove(3) instead.
+** The memcpy() function returns the original value of dst.
+*/
 
 #include "libft.h"
 

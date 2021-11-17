@@ -6,9 +6,15 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:09:00 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/14 23:01:01 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/17 17:47:25 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION:
+** Strcpy() copy the string src to dst, including the terminating `\0' character.
+** The strcpy() returns dst.
+*/
 
 #include "libft.h"
 
