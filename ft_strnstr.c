@@ -6,9 +6,20 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:23:10 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/12 21:47:43 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:25:11 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The strnstr() function locates the first occurrence
+** of the null-terminated string needle in the string haystack,
+** where not more than len characters are searched.
+** Characters that appear after a `\0' character are not searched.
+** If needle is an empty string, haystack is returned;
+** if needle occurs nowhere in haystack, NULL is returned;
+** otherwise ptr to the first character 
+** of the first occurrence of needle returned
+*/
 
 #include "libft.h"
 

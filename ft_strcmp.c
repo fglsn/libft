@@ -6,9 +6,19 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:55:22 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/04 11:10:45 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:27:15 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* 
+** The strcmp() and strncmp() functions lexicographically compare 
+** the null-terminated strings s1 and s2.
+** The strcmp() and strncmp() functions return an integer greater than,
+** equal to, or less than 0, according as the string s1 is greater than, 
+** equal to, or less than the string s2.
+** The comparison is done using unsigned characters,
+** so that `\200' is greater than `\0'.
+*/
 
 #include "libft.h"
 

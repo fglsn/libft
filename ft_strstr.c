@@ -6,9 +6,18 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:36:10 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/14 21:54:47 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/18 14:27:17 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* 
+** The strstr() function locates the first occurrence of the null-terminated
+** string needle in the null-terminated string haystack.
+** If needle is an empty string, haystack is returned;
+** If needle occurs nowhere in haystack, NULL is returned; 
+** Otherwise a pointer to the first character
+** of the first occurrence of needle is returned.
+*/
 
 #include "libft.h"
 

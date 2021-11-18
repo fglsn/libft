@@ -3,12 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fglsn <fglsn@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:21:44 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/03 15:40:27 by fglsn            ###   ########.fr       */
+/*   Updated: 2021/11/18 12:08:07 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION:
+** The strncat() function appends not more than n characters from s2,
+** and then adds a terminating `\0'.
+** The src and dest strings should not overlap, as the behavior is undefined.
+** The strcat() and strncat() functions return the pointer s1.
+*/
 
 #include "libft.h"
 
