@@ -53,7 +53,13 @@ FUNCTIONS = ft_memset.c \
 					ft_putchar_fd.c \
 					ft_putstr_fd.c \
 					ft_putendl_fd.c \
-					ft_putnbr_fd.c
+					ft_putnbr_fd.c \
+					ft_lstnew.c \
+					ft_lstdelone.c \
+#					ft_lstdel \
+					ft_lstadd \
+					ft_lstiter \
+					ft_lstmap \
 
 OBJECTS = $(FUNCTIONS:.c=.o)
 
