@@ -1,45 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 15:09:07 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/22 11:17:27 by ishakuro         ###   ########.fr       */
+/*   Created: 2021/11/22 11:02:43 by ishakuro          #+#    #+#             */
+/*   Updated: 2021/11/22 12:13:46 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	ft_printnbr_fd(int n, int fd)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (n > 0 && n < 10)
-	{
-		ft_putchar_fd((char)n + '0', fd);
-		return ;
-	}
-	ft_printnbr_fd(n / 10, fd);
-	ft_putchar_fd(n % 10 + '0', fd);
-}
+	size_t	src_len;
+	size_t	i;
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == 0)
+	if (!dst && !src)
+		return (0);
+	i = 0;
+	src_len = ft_strlen(src);
+	if (size == 0)
 	{
-		ft_putchar_fd('0', fd);
-		return ;
+		return (src_len);
 	}
-	if (n == -2147483648)
+	while (i < size - 1 && src[i])
 	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
+		dst[i] = (char)src[i];
+		i++;
 	}
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_printnbr_fd(-n, fd);
-		return ;
-	}
-	ft_printnbr_fd(n, fd);
+	dst[i] = '\0';
+	return (src_len);
 }
