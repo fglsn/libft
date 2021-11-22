@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 13:31:10 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/22 10:24:41 by ishakuro         ###   ########.fr       */
+/*   Created: 2021/11/21 21:55:36 by ishakuro          #+#    #+#             */
+/*   Updated: 2021/11/21 22:09:56 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list	*lst;
+	t_list *node;
 
-	lst = *alst;
-	del(lst->content, lst->content_size);
-	free(lst);
-	*alst = NULL;
+	if (*alst == NULL)
+	{
+		*alst = new;
+		return ;
+	}
+	node = *alst;
+	*alst = new;
+	new->next = node;
 }

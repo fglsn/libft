@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 13:31:10 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/22 10:24:41 by ishakuro         ###   ########.fr       */
+/*   Created: 2021/11/22 11:07:57 by ishakuro          #+#    #+#             */
+/*   Updated: 2021/11/22 11:12:07 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+int	ft_isspace(char c)
 {
-	t_list	*lst;
-
-	lst = *alst;
-	del(lst->content, lst->content_size);
-	free(lst);
-	*alst = NULL;
+	if (c == '\f' || c == '\n' || c == '\r'
+		|| c == '\t' || c == '\v' || c == ' ')
+	{
+		return (1);
+	}
+	return (0);
 }

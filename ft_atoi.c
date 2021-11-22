@@ -6,21 +6,11 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:58:44 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/16 18:41:24 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/22 11:11:41 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(char c)
-{
-	if (c == '\f' || c == '\n' || c == '\r'
-		|| c == '\t' || c == '\v' || c == ' ')
-	{
-		return (1);
-	}
-	return (0);
-}
 
 static int	check_sign(const char **c)
 {

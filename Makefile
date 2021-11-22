@@ -1,5 +1,5 @@
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -Wconversion
 NAME = libft.a
 
 FUNCTIONS = ft_memset.c \
@@ -56,10 +56,10 @@ FUNCTIONS = ft_memset.c \
 					ft_putnbr_fd.c \
 					ft_lstnew.c \
 					ft_lstdelone.c \
-#					ft_lstdel \
-					ft_lstadd \
-					ft_lstiter \
-					ft_lstmap \
+					ft_lstdel.c \
+					ft_lstadd.c \
+					ft_lstiter.c \
+					ft_lstmap.c \
 
 OBJECTS = $(FUNCTIONS:.c=.o)
 

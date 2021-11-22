@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:11:17 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/18 12:22:53 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/22 11:03:00 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,6 @@
 */
 
 #include "libft.h"
-
-static size_t	ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t	src_len;
-	size_t	i;
-
-	i = 0;
-	src_len = ft_strlen(src);
-	if (size == 0)
-	{
-		return (src_len);
-	}
-	while (i < size - 1 && src[i])
-	{
-		dst[i] = (char)src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (src_len);
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

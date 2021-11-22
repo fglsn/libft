@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 15:09:07 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/10 17:35:56 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/22 11:17:27 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	void	ft_printnbr_fd(int n, int fd)
 {
 	if (n > 0 && n < 10)
 	{
-		ft_putchar_fd(n + '0', fd);
+		ft_putchar_fd((char)n + '0', fd);
 		return ;
 	}
 	ft_printnbr_fd(n / 10, fd);
