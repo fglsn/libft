@@ -1,5 +1,5 @@
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -Wconversion
+FLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 FUNCTIONS = ft_memset.c \

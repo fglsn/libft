@@ -6,15 +6,15 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:26:11 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/22 11:16:36 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:47:05 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_numlen(long n)
+static int	ft_numlen(long n)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
 	if (n <= 0)
@@ -27,7 +27,7 @@ static size_t	ft_numlen(long n)
 	return (len);
 }
 
-char	*ft_do_itoa(char *result, size_t num_len, long nbr)
+char	*ft_do_itoa(char *result, int num_len, long nbr)
 {
 	result[num_len] = '\0';
 	if (nbr == 0)
@@ -52,13 +52,13 @@ char	*ft_do_itoa(char *result, size_t num_len, long nbr)
 
 char	*ft_itoa(int n)
 {
-	size_t	num_len;
+	int		num_len;
 	char	*result;
 	long	nbr;
 
 	nbr = (long)n;
 	num_len = ft_numlen(nbr);
-	result = ft_strnew(num_len);
+	result = ft_strnew((size_t)num_len);
 	if (!result)
 		return (0);
 	result = ft_do_itoa(result, num_len, nbr);
