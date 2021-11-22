@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:05:58 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/22 11:10:38 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:31:26 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-int		ft_isspace(char c);
+int		ft_isspace(int c);
+int		ft_isupper(int c);
+int		ft_islower(int c);
 
 #endif
