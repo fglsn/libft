@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:26:11 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/22 12:47:05 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:43:48 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_numlen(long n)
 	return (len);
 }
 
-char	*ft_do_itoa(char *result, int num_len, long nbr)
+static char	*ft_do_itoa(char *result, int num_len, long nbr)
 {
 	result[num_len] = '\0';
 	if (nbr == 0)

@@ -72,10 +72,7 @@ $(NAME):
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
-all:
-	$(CC) $(FLAGS) -c $(FUNCTIONS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+all: $(NAME)
 
 clean:
 	rm -f $(OBJECTS) *gch
