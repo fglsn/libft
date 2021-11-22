@@ -60,6 +60,8 @@ FUNCTIONS = ft_memset.c \
 					ft_lstadd.c \
 					ft_lstiter.c \
 					ft_lstmap.c \
+					ft_strlcpy.c \
+					ft_isspace.c \
 
 OBJECTS = $(FUNCTIONS:.c=.o)
 

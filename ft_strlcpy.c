@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 11:02:43 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/22 11:03:16 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:13:46 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	src_len;
 	size_t	i;
 
+	if (!dst && !src)
+		return (0);
 	i = 0;
 	src_len = ft_strlen(src);
 	if (size == 0)
