@@ -76,7 +76,7 @@ $(NAME):
 all: $(NAME)
 
 clean:
-	rm -f $(OBJECTS) *gch
+	rm -f $(OBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
