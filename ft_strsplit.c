@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:58:36 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/15 17:50:08 by ishakuro         ###   ########.fr       */
+/*   Updated: 2022/01/13 17:53:35 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ static char	**ft_split(char *s, char c, char **result)
 			return (result);
 		result[j] = ft_strnew(word_len);
 		if (!result[j])
+		{
+			ft_arraydel(result, j);
 			return (NULL);
+		}
 		ft_strncpy(result[j], s, word_len);
 		s = s + word_len;
 		j++;

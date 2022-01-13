@@ -65,6 +65,8 @@ FUNCTIONS = ft_memset.c \
 					ft_islower.c \
 					ft_isupper.c \
 					ft_get_next_line.c \
+					ft_arraydel.c \
+					ft_arrayprint.c \
 
 OBJECTS = $(FUNCTIONS:.c=.o)
 

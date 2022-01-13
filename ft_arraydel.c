@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_arraydel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 19:03:30 by ishakuro          #+#    #+#             */
-/*   Updated: 2022/01/13 18:18:19 by ishakuro         ###   ########.fr       */
+/*   Created: 2022/01/13 17:43:38 by ishakuro          #+#    #+#             */
+/*   Updated: 2022/01/13 17:44:18 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	a;
+#include "libft.h"
 
-	if (nb == 1)
-		return (1);
-	a = 2;
-	while (a < 46341 && nb > a * a)
-		a++;
-	if (a * a == nb)
-		return (a);
-	return (0);
+void	ft_arraydel(char **str_array, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_strdel(&str_array[i]);
+		i++;
+	}
+	free(str_array);
 }

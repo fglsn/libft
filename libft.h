@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:05:58 by ishakuro          #+#    #+#             */
-/*   Updated: 2022/01/13 13:21:24 by ishakuro         ###   ########.fr       */
+/*   Updated: 2022/01/13 18:14:57 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 # define BUFF_SIZE 32
 # define FD_COUNT 12228
 
-int	get_next_line(const int fd, char **line);
+int		get_next_line(const int fd, char **line);
+void	ft_arraydel(char **str_array, int size);
+void	ft_printarray(char **content);
 
 typedef struct s_list
 {
